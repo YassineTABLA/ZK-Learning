@@ -1,0 +1,21 @@
+<?page title="Auto Generated index.zul"?>
+<?taglib uri="/WEB-INF/tld/web/core.dsp.tld" prefix="c" ?>
+<zk>
+	<window onCreate="setLabel3()">
+		<zscript>
+			public void setLabel3() {
+				lbl3.setValue(org.zkoss.util.resource.Labels.getLabel("app.title.setByJavaCode"));
+			}
+
+            public void showMsgBox() {
+                Messagebox.show(org.zkoss.util.resource.Labels.getLabel("app.question.delete"), org.zkoss.util.resource.Labels.getLabel("app.question.confirm"), Messagebox.YES | Messagebox.NO, Messagebox.QUESTION);
+            }
+		</zscript>
+		<vbox>
+			<label id="lbl1" value="Hard coded label" />
+			<label id="lbl2" value="With el: ${c:l('app.title')}" />
+			<label id="lbl3" value="Will be set by java class" />
+                        <button id="btnMsg" label="Messagebox" onClick="showMsgBox()" />
+		</vbox>
+	</window>
+</zk>
